@@ -1,0 +1,59 @@
+==
+<!-- cart start -->
+<section id="cart" class="module module-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="module-header">
+                    <h2 class="module-title">{% content 'cart/title' %}</h2>
+                    <div class="module-line"></div>
+                    <div class="ajax-response module-subtitle">
+                        {% content 'cart/desc' %}
+                    </div>
+                </div>
+                <div class="module-line"></div>
+            </div>
+        </div>
+    </div>
+    <!-- .row -->
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <form id="contact-form" role="form">
+                <div class="ajax-hidden">
+                    <div class="form-group wow fadeInUp">
+                        <label class="sr-only" for="c_name">Имя</label>
+                        <input type="text" id="c_name" class="form-control" name="c_name" placeholder="Имя">
+                        <div class="ajax-response-name"></div>
+                    </div>
+                    <div class="form-group wow fadeInUp" data-wow-delay=".1s">
+                        <label class="sr-only" for="c_tel">Телефон или логин Skype</label>
+                        <input type="tel" id="c_tel" class="form-control" name="c_email" placeholder="Телефон или логин Skype">
+                        <div class="ajax-response-tel"></div>
+                    </div>
+                    <div class="form-group wow fadeInUp" data-wow-delay=".1s">
+                        <label class="sr-only" for="c_email">E-mail</label>
+                        <input type="tel" id="c_email" class="form-control" name="c_email" placeholder="E-mail">
+                        <div class="ajax-response-email"></div>
+                    </div>
+                    <div class="form-group wow fadeInUp" data-wow-delay=".2s">
+                        <textarea class="form-control" id="c_message" name="c_message" rows="7" placeholder="Сообщение"></textarea>
+                        <div class="ajax-response-message"></div>
+                    </div>
+                    
+                    <div class="form-group wow fadeInUp" data-wow-delay=".1s">
+                        <label class="sr-only" for="c_pic1">Изображение</label>
+                        <input type="file" id="c_pic1" name="c_pic1" placeholder="Загрузите изображение...">
+                    </div>
+                    <button type="submit" class="btn btn-block btn-custom-2 wow fadeInUp" data-wow-delay=".3s">
+                        Отправить
+                    </button>
+                </div>
+                <!-- <div class="ajax-response"></div> -->
+            </form>
+        </div>
+    </div>
+    <!-- .row -->
+    </div>
+    <!-- .container -->
+</section>
+<!-- cart end -->

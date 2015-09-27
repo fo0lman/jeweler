@@ -1,0 +1,3 @@
+==
+{% set rusmonth = ["Января","Февраля","Марта","Апреля","Мая","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"] %}
+{{ rusm|date('j') }} {{ rusmonth[rusm|date('n')-1] }} {{ rusm|date('Y') }}

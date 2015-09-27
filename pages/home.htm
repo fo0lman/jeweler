@@ -1,0 +1,43 @@
+title = "Главная страница"
+url = "/"
+layout = "default"
+hidden = "0"
+==
+
+{% partial 'myjewerly' %}
+
+{% partial  'callout' %}
+
+{% partial  'sales' %}
+
+{% partial  'about' %}
+
+{% partial  'contacts' %}
+
+{% partial  'map' %}
+
+<!-- Blog last entries start -->
+<section id="blog" class="module">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="module-header wow fadeInUp">
+                    <div class="module-icon"><!-- span class="icon-social-twitter"></span --> Последние записи из
+                        блога
+                    </div>
+                </div>
+                <!-- <div class="testimonials owl-carousel wow fadeInUp"></div> -->
+                <div class="last-entries-blog owl-carousel wow fadeInUp">
+                    {% partial  'blog-last-entries' %}   
+                </div>
+                <div class="blog-link text-right"><a href="/blog">Все записи блога <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+</section>
+<!-- Blog last entries end -->
+
+{% partial  'cart' %}

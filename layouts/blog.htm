@@ -1,0 +1,82 @@
+description = "Jeweler blog layout"
+==
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="{% if this.page.meta_title %}{{ this.page.meta_title }}{% else %}{{ this.theme.meta_title }}{% endif %}">
+    <meta name="keywords" content="{{ this.theme.meta_keywords }}">
+    <meta name="description" content="{% if this.page.meta_description %}{{ this.page.meta_description }}{% else %}{{ this.theme.meta_description }}{% endif %}">
+    <meta name="author" content="foolman">
+    <title>{{ this.page.title }}</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="/favicon16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon64.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="/favicon96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon128.png" sizes="128x128">
+    <link href="{{ 'assets/bootstrap/css/bootstrap.min.css'|theme }}" rel="stylesheet" media="screen">
+    <link href="{{ 'assets/css/font-awesome.min.css'|theme }}" rel="stylesheet" media="screen">
+    <link href="{{ 'assets/css/simple-line-icons.css'|theme }}" rel="stylesheet" media="screen">
+    <!--[if lte IE 7]>
+    <script src="assets/js/icons-lte-ie7.js"></script>
+    <![endif]-->
+    
+    <link href="{{ 'assets/css/animate.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet" media="screen">
+
+    <!-- Extra styles -->
+    {% styles %}
+
+    <!-- Inline styles -->
+    <style>{% placeholder inline_styles %}</style>
+</head>
+
+<body>
+    <div class="preloader-bg">
+        <div class="preloader"></div>
+    </div>
+
+    <div id="home"></div>
+    
+    {% partial 'blogheader' %}
+
+    <section id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8"> 
+                    {% component 'blogPosts' %}
+                </div>
+                <div class="col-sm-4">
+                    {% component 'blogCategories' %}
+                </div>
+            </div>
+        </div>  
+    </section>
+
+    {% page %}    
+
+    {% partial 'footer' %}
+
+    <!-- Javascript files -->
+    <script src="{{ 'assets/js/jquery-1.11.1.min.js'|theme }}"></script>
+    <script src="{{ 'assets/bootstrap/js/bootstrap.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/jquery.fitvids.js'|theme }}"></script>
+    <script src="{{ 'assets/js/jquery.sticky.js'|theme }}"></script>
+    <script src="{{ 'assets/js/smoothscroll.js'|theme }}"></script>
+    <script src="{{ 'assets/js/wow.min.js'|theme }}"></script>
+    <!-- Custom scripts -->
+    <script src="{{ 'assets/js/custom-blog.js'|theme }}"></script>
+
+    <!-- OctoberCMS Ajax Framework and extras -->
+    {% framework extras %}
+
+    <!-- Extra -->
+    {% scripts %}
+
+    <!-- Inline scripts -->
+    <script>{% placeholder inline_scripts %}</script>
+</body>
+</html>

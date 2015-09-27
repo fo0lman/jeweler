@@ -1,0 +1,19 @@
+title = "Блог"
+url = "/blog/:page?"
+layout = "blog"
+description = "Главная страница блога"
+hidden = "0"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = "7"
+noPostsMessage = "No posts found"
+sortOrder = "created_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = "0"
+categoryPage = "blog/category"
+==

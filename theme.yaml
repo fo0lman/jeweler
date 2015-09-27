@@ -1,0 +1,29 @@
+name: Jeweler Template
+code: jeweler
+description: "Тема разработана для сайта jeweler.dp.ua. Портирована на OctoberCMS"
+author: ~Fo0LM@N~
+homepage: 'http://jeweler.dp.ua'
+
+# [...]
+
+form:
+    fields:
+        site_name:
+            label: Site name
+            comment: The website name as it should appear on the front-end
+            default: Squad
+    tabs:
+        fields:
+            meta_title:
+                label: Meta title
+                tab: Metadata
+                default: Squad
+
+            meta_keywords:
+                label: Meta keywords
+                tab: Metadata
+
+            meta_description:
+                label: Meta description
+                tab: Metadata
+                default: Squad Bootstrap Template

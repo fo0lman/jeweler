@@ -1,0 +1,86 @@
+[advanced blogPostSlider]
+idSlider = "2"
+height = "400"
+autoplay = "true"
+fillmode = "1"
+transaction = "2"
+autoplayinterval = "7000"
+pauseonhover = "1"
+arrowkeynavigation = "false"
+slideduration = "5000"
+mindragoffset = "40"
+slidespacing = "0"
+dragorientation = "1"
+playorientation = "1"
+chancetoshow = "0"
+autocenter = "1"
+orientation = "1"
+spacingx = "8"
+spacingy = "8"
+steps = "1"
+lanes = "1"
+chancetoshowarrow = "0"
+autocenterarrow = "2"
+stepsarrow = "1"
+==
+<!-- Navigation start -->
+<header class="header navbar-border">
+    <nav class="navbar navbar-custom" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+                    <span class="sr-only">Навигация по сайту</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Jeweler</a>
+            </div>
+            <div class="collapse navbar-collapse" id="custom-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/#portfolio">Мои изделия</a></li>
+                    <li><a href="/#services">Акции</a></li>
+                    <li><a href="/#about">О нас</a></li>
+                    <li><a href="/#contact">Контакты</a></li>
+                    <li><a href="/blog">Блог</a></li>
+                    <li><a href="/#cart">Сделать заказ</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- .container -->
+    </nav>
+</header>
+<!-- Navigation end -->
+
+<!-- Blog slider start -->
+<section id="blog-slider">
+    {% component 'blogPostSlider' %}
+</section>
+<!-- Blog slider end -->
+
+<!-- Blog title start -->
+<section id="blog-title" class="callout">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>{{ this.page.title }}</h2>
+                <div class="callout-decription">
+                   <p class="info">
+                            Опубликовано: 
+                            <span>{% partial 'rusmonth' rusm=post.published_at %}</span>,
+                            {% if post.categories.count %} Категория:  
+                            {% for category in post.categories %}
+                            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                            
+                        </p>
+                </div>
+            </div>
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+</section>
+<!-- Blog title end -->

@@ -1,0 +1,32 @@
+description = "Последние записи блога"
+
+[blogPosts blogLastEntries]
+pageNumber = "{{ :page }}"
+postsPerPage = "3"
+noPostsMessage = "No posts found"
+sortOrder = "created_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+
+{% for post in posts %}
+<div class="owl-item">
+	<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+
+	<p class="info">
+		Опубликовано: <span>{% partial 'rusmonth' rusm=post.published_at %}</span>,
+		{% if post.categories.count %} Категория: {% endif %}
+		{% for category in post.categories %}
+		<a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+		{% endfor %}
+	</p>
+
+	{% if post.excerpt %}
+	<p class="excerpt">{{ post.excerpt }}</p>
+	{% else %}
+	<div class="content">{{ post.content_html|raw }}</div>
+	{% endif %}
+</div>
+{% else %}
+<div class="owl-item">{{ noPostsMessage }}</div>
+{% endfor %}
